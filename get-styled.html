@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Styled - SmartFit Style</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .glow-button {
+            box-shadow: 0 0 20px rgba(102, 126, 234, 0.5);
+            transition: all 0.3s ease;
+        }
+        
+        .glow-button:hover {
+            box-shadow: 0 0 30px rgba(102, 126, 234, 0.8);
+            transform: translateY(-2px);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: scale(1.05);
+        }
+        
+        #mobileMenu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        #mobileMenu.active {
+            max-height: 500px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Navigation -->
+    <nav class="bg-gray-900 text-white fixed w-full z-50 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-2xl font-bold gradient-text">SmartFit Style</a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="hover:text-purple-400 transition duration-300">Home</a>
+                    <a href="features.html" class="hover:text-purple-400 transition duration-300">Features</a>
+                    <a href="get-styled.html" class="text-purple-400 transition duration-300">Get Styled</a>
+                    <a href="lookbook.html" class="hover:text-purple-400 transition duration-300">Lookbook</a>
+                    <a href="contact.html" class="hover:text-purple-400 transition duration-300">Contact</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="menuBtn" class="md:hidden focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="md:hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1">
+                    <a href="index.html" class="block px-3 py-2 hover:bg-gray-800 rounded transition duration-300">Home</a>
+                    <a href="features.html" class="block px-3 py-2 hover:bg-gray-800 rounded transition duration-300">Features</a>
+                    <a href="get-styled.html" class="block px-3 py-2 bg-gray-800 rounded transition duration-300">Get Styled</a>
+                    <a href="lookbook.html" class="block px-3 py-2 hover:bg-gray-800 rounded transition duration-300">Lookbook</a>
+                    <a href="contact.html" class="block px-3 py-2 hover:bg-gray-800 rounded transition duration-300">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- User Input Form Section -->
+    <section class="py-20 bg-gradient-to-br from-gray-900 to-gray-800 pt-32">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4">
+                    Get Your <span class="gradient-text">Perfect Style</span>
+                </h1>
+                <p class="text-xl text-gray-300">
+                    Tell us about yourself and we'll create the perfect outfit
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-2xl p-6 sm:p-8 md:p-10">
+                <form id="styleForm" class="space-y-6">
+                    <!-- Skin Tone -->
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-3 text-lg">Skin Tone</label>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                            <label class="relative cursor-pointer">
+                                <input type="radio" name="skinTone" value="fair" class="peer sr-only" required>
+                                <div class="border-2 border-gray-300 rounded-lg p-4 text-center peer-checked:border-purple-600 peer-checked:bg-purple-50 transition duration-300 hover:border-purple-400">
+                                    <div class="w-12 h-12 bg-amber-100 rounded-full mx-auto mb-2"></div>
+                                    <span class="font-medium">Fair</span>
+                                </div>
+                            </label>
+                            <label class="relative cursor-pointer">
+                                <input type="radio" name="skinTone" value="medium" class="peer sr-only">
+                                <div class="border-2 border-gray-300 rounded-lg p-4 text-center peer-checked:border-purple-600 peer-checked:bg-purple-50 transition duration-300 hover:border-purple-400">
+                                    <div class="w-12 h-12 bg-amber-300 rounded-full mx-auto mb-2"></div>
+                                    <span class="font-medium">Medium</span>
+                                </div>
+                            </label>
+                            <label class="relative cursor-pointer">
+                                <input type="radio" name="skinTone" value="dark" class="peer sr-only">
+                                <div class="border-2 border-gray-300 rounded-lg p-4 text-center peer-checked:border-purple-600 peer-checked:bg-purple-50 transition duration-300 hover:border-purple-400">
+                                    <div class="w-12 h-12 bg-amber-700 rounded-full mx-auto mb-2"></div>
+                                    <span class="font-medium">Dark</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Body Type -->
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-3 text-lg">Body Type</label>
+                        <select name="bodyType" required class="w-full border-2 border-gray-300 rounded-lg p-4 text-gray-700 focus:border-purple-600 focus:ring-2 focus:ring-purple-200 transition duration-300 outline-none">
+                            <option value="">Select your body type</option>
+                            <option value="slim">Slim</option>
+                            <option value="average">Average</option>
+                            <option value="athletic">Athletic/Muscular</option>
+                            <option value="heavy">Heavy</option>
+                        </select>
+                    </div>
+
+                    <!-- Weight -->
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-3 text-lg">Weight (kg)</label>
+                        <input type="number" name="weight" min="40" max="200" required class="w-full border-2 border-gray-300 rounded-lg p-4 text-gray-700 focus:border-purple-600 focus:ring-2 focus:ring-purple-200 transition duration-300 outline-none" placeholder="Enter your weight">
+                    </div>
+
+                    <!-- Occasion -->
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-3 text-lg">Occasion</label>
+                        <select name="occasion" required class="w-full border-2 border-gray-300 rounded-lg p-4 text-gray-700 focus:border-purple-600 focus:ring-2 focus:ring-purple-200 transition duration-300 outline-none">
+                            <option value="">Select occasion</option>
+                            <option value="casual">Casual Outing</option>
+                            <option value="office">Office/Formal</option>
+                            <option value="party">Party/Night Out</option>
+                            <option value="date">Date Night</option>
+                            <option value="wedding">Wedding/Event</option>
+                        </select>
+                    </div>
+
+                    <!-- Clothes Owned -->
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-3 text-lg">Clothes You Own</label>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                            <label class="flex items-center space-x-2 cursor-pointer">
+                                <input type="checkbox" name="clothes" value="white-shirt" class="w-5 h-5 text-purple-600 rounded focus:ring-purple-500">
+                                <span class="text-gray-700">White Shirt</span>
+                            </label>
+                            <label class="flex items-center space-x-2 cursor-pointer">
+                                <input type="checkbox" name="clothes" value="black-jeans" class="w-5 h-5 text-purple-600 rounded focus:ring-purple-500">
+                                <span class="text-gray-700">Black Jeans</span>
+                            </label>
+                            <label class="flex items-center space-x-2 cursor-pointer">
+                                <input type="checkbox" name="clothes" value="blazer" class="w-5 h-5 text-purple-600 rounded focus:ring-purple-500">
+                                <span class="text-gray-700">Blazer</span>
+                            </label>
+                            <label class="flex items-center space-x-2 cursor-pointer">
+                                <input type="checkbox" name="clothes" value="sneakers" class="w-5 h-5 text-purple-600 rounded focus:ring-purple-500">
+                                <span class="text-gray-700">Sneakers</span>
+                            </label>
+                            <label class="flex items-center space-x-2 cursor-pointer">
+                                <input type="checkbox" name="clothes" value="blue-shirt" class="w-5 h-5 text-purple-600 rounded focus:ring-purple-500">
+                                <span class="text-gray-700">Blue Shirt</span>
+                            </label>
+                            <label class="flex items-center space-x-2 cursor-pointer">
+                                <input type="checkbox" name="clothes" value="chinos" class="w-5 h-5 text-purple-600 rounded focus:ring-purple-500">
+                                <span class="text-gray-700">Chinos</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="w-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white py-4 rounded-lg text-lg font-semibold glow-button">
+                        Generate My Style ✨
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Suggestion Results -->
+    <section id="suggestions" class="py-20 bg-gray-50 hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    Your <span class="gradient-text">AI-Curated</span> Outfit
+                </h2>
+                <p class="text-xl text-gray-600">
+                    Perfectly matched for your style and occasion
+                </p>
+            </div>
+
+            <div id="suggestionResults" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Results will be injected here -->
+            </div>
+
+            <!-- Color Palette -->
+            <div class="mt-12 bg-white rounded-2xl shadow-lg p-8">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Recommended Color Palette</h3>
+                <div id="colorPalette" class="flex justify-center space-x-4 flex-wrap gap-4">
+                    <!-- Colors will be injected here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-2xl font-bold gradient-text mb-4">SmartFit Style</h3>
+                    <p class="text-gray-400">AI-powered fashion styling for the modern man</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="index.html" class="hover:text-purple-400 transition duration-300">Home</a></li>
+                        <li><a href="features.html" class="hover:text-purple-400 transition duration-300">Features</a></li>
+                        <li><a href="get-styled.html" class="hover:text-purple-400 transition duration-300">Get Styled</a></li>
+                        <li><a href="lookbook.html" class="hover:text-purple-400 transition duration-300">Lookbook</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">About</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-purple-400 transition duration-300">Our Story</a></li>
+                        <li><a href="#" class="hover:text-purple-400 transition duration-300">Team</a></li>
+                        <li><a href="#" class="hover:text-purple-400 transition duration-300">Careers</a></li>
+                        <li><a href="#" class="hover:text-purple-400 transition duration-300">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-purple-600 transition duration-300">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-purple-600 transition duration-300">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-purple-600 transition duration-300">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <p class="text-gray-400 mt-4">info@smartfitstyle.com</p>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>&copy; 2026 SmartFit Style. All rights reserved. Powered by AI.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Style Form Submission
+        const styleForm = document.getElementById('styleForm');
+        const suggestionsSection = document.getElementById('suggestions');
+        const suggestionResults = document.getElementById('suggestionResults');
+        const colorPalette = document.getElementById('colorPalette');
+
+        const outfitDatabase = {
+            casual: {
+                fair: { top: 'Light Blue Denim Shirt', bottom: 'Beige Chinos', shoes: 'White Sneakers', colors: ['#E3F2FD', '#FFF8E1', '#FFFFFF'] },
+                medium: { top: 'Navy Blue T-Shirt', bottom: 'Dark Jeans', shoes: 'Brown Loafers', colors: ['#1A237E', '#263238', '#795548'] },
+                dark: { top: 'Olive Green Shirt', bottom: 'Black Chinos', shoes: 'Black Sneakers', colors: ['#558B2F', '#212121', '#000000'] }
+            },
+            office: {
+                fair: { top: 'White Dress Shirt', bottom: 'Navy Blue Trousers', shoes: 'Black Oxford Shoes', colors: ['#FFFFFF', '#1A237E', '#000000'] },
+                medium: { top: 'Light Blue Dress Shirt', bottom: 'Charcoal Trousers', shoes: 'Brown Derby Shoes', colors: ['#BBDEFB', '#424242', '#5D4037'] },
+                dark: { top: 'Lavender Dress Shirt', bottom: 'Navy Trousers', shoes: 'Black Brogues', colors: ['#E1BEE7', '#1A237E', '#000000'] }
+            },
+            party: {
+                fair: { top: 'Black Slim Fit Shirt', bottom: 'Dark Grey Jeans', shoes: 'Chelsea Boots', colors: ['#000000', '#424242', '#212121'] },
+                medium: { top: 'Burgundy Shirt', bottom: 'Black Jeans', shoes: 'Black Boots', colors: ['#880E4F', '#000000', '#212121'] },
+                dark: { top: 'Emerald Green Shirt', bottom: 'Black Trousers', shoes: 'Black Dress Shoes', colors: ['#004D40', '#000000', '#212121'] }
+            },
+            date: {
+                fair: { top: 'Pastel Pink Shirt', bottom: 'Navy Chinos', shoes: 'Brown Loafers', colors: ['#F8BBD0', '#1A237E', '#795548'] },
+                medium: { top: 'Sky Blue Shirt', bottom: 'Khaki Chinos', shoes: 'Tan Brogues', colors: ['#81D4FA', '#8D6E63', '#A1887F'] },
+                dark: { top: 'Coral Shirt', bottom: 'Dark Blue Jeans', shoes: 'Brown Boots', colors: ['#FF7043', '#0D47A1', '#6D4C41'] }
+            },
+            wedding: {
+                fair: { top: 'Ivory Suit Jacket', bottom: 'Matching Trousers', shoes: 'Patent Leather Shoes', colors: ['#FFF9C4', '#FFFDE7', '#000000'] },
+                medium: { top: 'Light Grey 3-Piece Suit', bottom: 'Matching Trousers', shoes: 'Black Oxford Shoes', colors: ['#BDBDBD', '#E0E0E0', '#000000'] },
+                dark: { top: 'Navy Blue Tuxedo', bottom: 'Matching Trousers', shoes: 'Black Patent Shoes', colors: ['#1A237E', '#0D47A1', '#000000'] }
+            }
+        };
+
+        const accessories = {
+            casual: { watch: 'Sporty Digital Watch', belt: 'Casual Canvas Belt', perfume: 'Fresh Citrus', extra: 'Baseball Cap' },
+            office: { watch: 'Classic Leather Watch', belt: 'Formal Leather Belt', perfume: 'Sophisticated Woody', extra: 'Silk Tie' },
+            party: { watch: 'Chronograph Watch', belt: 'Designer Belt', perfume: 'Bold Spicy', extra: 'Statement Ring' },
+            date: { watch: 'Minimalist Watch', belt: 'Slim Leather Belt', perfume: 'Romantic Fresh', extra: 'Pocket Square' },
+            wedding: { watch: 'Luxury Dress Watch', belt: 'Premium Leather Belt', perfume: 'Elegant Oriental', extra: 'Cufflinks' }
+        };
+
+        styleForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const formData = new FormData(styleForm);
+            const skinTone = formData.get('skinTone');
+            const occasion = formData.get('occasion');
+            const bodyType = formData.get('bodyType');
+            
+            const outfit = outfitDatabase[occasion][skinTone];
+            const accessorySet = accessories[occasion];
+            
+            // Generate Results
+            suggestionResults.innerHTML = `
+                <div class="bg-white rounded-2xl shadow-lg p-6 card-hover">
+                    <div class="text-5xl mb-4 text-center">👔</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Top Wear</h3>
+                    <p class="text-gray-600">${outfit.top}</p>
+                    <div class="mt-4 text-sm text-purple-600 font-semibold">Perfect for ${bodyType} build</div>
+                </div>
+                
+                <div class="bg-white rounded-2xl shadow-lg p-6 card-hover">
+                    <div class="text-5xl mb-4 text-center">👖</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Bottom Wear</h3>
+                    <p class="text-gray-600">${outfit.bottom}</p>
+                    <div class="mt-4 text-sm text-purple-600 font-semibold">Optimized fit</div>
+                </div>
+                
+                <div class="bg-white rounded-2xl shadow-lg p-6 card-hover">
+                    <div class="text-5xl mb-4 text-center">👞</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Footwear</h3>
+                    <p class="text-gray-600">${outfit.shoes}</p>
+                    <div class="mt-4 text-sm text-purple-600 font-semibold">Comfort + Style</div>
+                </div>
+                
+                <div class="bg-gradient-to-br from-purple-600 to-indigo-600 rounded-2xl shadow-lg p-6 card-hover text-white">
+                    <div class="text-5xl mb-4 text-center">⌚</div>
+                    <h3 class="text-xl font-bold mb-2">Accessories</h3>
+                    <ul class="text-sm space-y-1">
+                        <li>• ${accessorySet.watch}</li>
+                        <li>• ${accessorySet.belt}</li>
+                        <li>• ${accessorySet.perfume}</li>
+                        <li>• ${accessorySet.extra}</li>
+                    </ul>
+                </div>
+            `;
+            
+            // Generate Color Palette
+            colorPalette.innerHTML = outfit.colors.map(color => `
+                <div class="text-center">
+                    <div class="w-20 h-20 rounded-full shadow-lg" style="background-color: ${color}"></div>
+                    <p class="mt-2 text-sm text-gray-600 font-mono">${color}</p>
+                </div>
+            `).join('');
+            
+            // Show Results
+            suggestionsSection.classList.remove('hidden');
+            suggestionsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    </script>
+</body>
+</html>

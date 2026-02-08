@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lookbook - SmartFit Style</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .card-hover {
+            transition: all 0.5s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(102, 126, 234, 0.4);
+        }
+        
+        #mobileMenu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        #mobileMenu.active {
+            max-height: 500px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <nav class="bg-gray-900 text-white fixed w-full z-50 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-2xl font-bold gradient-text">SmartFit Style</a>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="hover:text-purple-400 transition duration-300">Home</a>
+                    <a href="features.html" class="hover:text-purple-400 transition duration-300">Features</a>
+                    <a href="get-styled.html" class="hover:text-purple-400 transition duration-300">Get Styled</a>
+                    <a href="lookbook.html" class="text-purple-400 transition duration-300">Lookbook</a>
+                    <a href="contact.html" class="hover:text-purple-400 transition duration-300">Contact</a>
+                </div>
+                
+                <button id="menuBtn" class="md:hidden focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <div id="mobileMenu" class="md:hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1">
+                    <a href="index.html" class="block px-3 py-2 hover:bg-gray-800 rounded transition duration-300">Home</a>
+                    <a href="features.html" class="block px-3 py-2 hover:bg-gray-800 rounded transition duration-300">Features</a>
+                    <a href="get-styled.html" class="block px-3 py-2 hover:bg-gray-800 rounded transition duration-300">Get Styled</a>
+                    <a href="lookbook.html" class="block px-3 py-2 bg-gray-800 rounded transition duration-300">Lookbook</a>
+                    <a href="contact.html" class="block px-3 py-2 hover:bg-gray-800 rounded transition duration-300">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="bg-gradient-to-br from-gray-900 to-gray-800 text-white pt-32 pb-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+                Style <span class="gradient-text">Inspiration</span>
+            </h1>
+            <p class="text-xl sm:text-2xl text-gray-300 max-w-3xl mx-auto">
+                Explore our curated collection of looks for every occasion
+            </p>
+        </div>
+    </section>
+
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <div class="relative group overflow-hidden rounded-2xl cursor-pointer card-hover">
+                    <div class="bg-gradient-to-br from-indigo-500 to-purple-600 h-96 flex flex-col items-center justify-center p-8">
+                        <span class="text-white text-7xl mb-4">👔</span>
+                        <h3 class="text-white text-2xl font-bold mb-2">Formal Excellence</h3>
+                        <p class="text-purple-100 text-center">Sharp suits and impeccable ties for the boardroom</p>
+                    </div>
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition duration-500 flex items-center justify-center">
+                        <div class="opacity-0 group-hover:opacity-100 transition duration-500 text-center px-6">
+                            <p class="text-white text-lg mb-4">Perfect for: Office, Business Meetings, Formal Events</p>
+                            <a href="get-styled.html" class="inline-block bg-white text-purple-600 px-6 py-3 rounded-full font-semibold hover:bg-purple-100 transition">Get This Look</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative group overflow-hidden rounded-2xl cursor-pointer card-hover">
+                    <div class="bg-gradient-to-br from-blue-500 to-cyan-600 h-96 flex flex-col items-center justify-center p-8">
+                        <span class="text-white text-7xl mb-4">👕</span>
+                        <h3 class="text-white text-2xl font-bold mb-2">Casual Chic</h3>
+                        <p class="text-blue-100 text-center">Relaxed yet refined for everyday elegance</p>
+                    </div>
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition duration-500 flex items-center justify-center">
+                        <div class="opacity-0 group-hover:opacity-100 transition duration-500 text-center px-6">
+                            <p class="text-white text-lg mb-4">Perfect for: Weekends, Brunch, Coffee Dates</p>
+                            <a href="get-styled.html" class="inline-block bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-blue-100 transition">Get This Look</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative group overflow-hidden rounded-2xl cursor-pointer card-hover">
+                    <div class="bg-gradient-to-br from-purple-500 to-pink-600 h-96 flex flex-col items-center justify-center p-8">
+                        <span class="text-white text-7xl mb-4">🎩</span>
+                        <h3 class="text-white text-2xl font-bold mb-2">Party Ready</h3>
+                        <p class="text-purple-100 text-center">Stand out in style for unforgettable nights</p>
+                    </div>
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition duration-500 flex items-center justify-center">
+                        <div class="opacity-0 group-hover:opacity-100 transition duration-500 text-center px-6">
+                            <p class="text-white text-lg mb-4">Perfect for: Clubs, Parties, Night Events</p>
+                            <a href="get-styled.html" class="inline-block bg-white text-pink-600 px-6 py-3 rounded-full font-semibold hover:bg-pink-100 transition">Get This Look</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative group overflow-hidden rounded-2xl cursor-pointer card-hover">
+                    <div class="bg-gradient-to-br from-green-500 to-teal-600 h-96 flex flex-col items-center justify-center p-8">
+                        <span class="text-white text-7xl mb-4">🧥</span>
+                        <h3 class="text-white text-2xl font-bold mb-2">Winter Layers</h3>
+                        <p class="text-green-100 text-center">Stay warm without sacrificing style</p>
+                    </div>
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition duration-500 flex items-center justify-center">
+                        <div class="opacity-0 group-hover:opacity-100 transition duration-500 text-center px-6">
+                            <p class="text-white text-lg mb-4">Perfect for: Cold Weather, Outdoor Events</p>
+                            <a href="get-styled.html" class="inline-block bg-white text-green-600 px-6 py-3 rounded-full font-semibold hover:bg-green-100 transition">Get This Look</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative group overflow-hidden rounded-2xl cursor-pointer card-hover">
+                    <div class="bg-gradient-to-br from-orange-500 to-red-600 h-96 flex flex-col items-center justify-center p-8">
+                        <span class="text-white text-7xl mb-4">👞</span>
+                        <h3 class="text-white text-2xl font-bold mb-2">Footwear Focus</h3>
+                        <p class="text-orange-100 text-center">The foundation of every great outfit</p>
+                    </div>
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition duration-500 flex items-center justify-center">
+                        <div class="opacity-0 group-hover:opacity-100 transition duration-500 text-center px-6">
+                            <p class="text-white text-lg mb-4">Sneakers, Boots, Oxfords & More</p>
+                            <a href="get-styled.html" class="inline-block bg-white text-orange-600 px-6 py-3 rounded-full font-semibold hover:bg-orange-100 transition">Get This Look</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative group overflow-hidden rounded-2xl cursor-pointer card-hover">
+                    <div class="bg-gradient-to-br from-gray-700 to-gray-900 h-96 flex flex-col items-center justify-center p-8">
+                        <span class="text-white text-7xl mb-4">💍</span>
+                        <h3 class="text-white text-2xl font-bold mb-2">Accessories Game</h3>
+                        <p class="text-gray-100 text-center">Complete your look with the perfect details</p>
+                    </div>
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition duration-500 flex items-center justify-center">
+                        <div class="opacity-0 group-hover:opacity-100 transition duration-500 text-center px-6">
+                            <p class="text-white text-lg mb-4">Watches, Belts, Sunglasses, Jewelry</p>
+                            <a href="get-styled.html" class="inline-block bg-white text-gray-800 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition">Get This Look</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative group overflow-hidden rounded-2xl cursor-pointer card-hover">
+                    <div class="bg-gradient-to-br from-yellow-500 to-orange-500 h-96 flex flex-col items-center justify-center p-8">
+                        <span class="text-white text-7xl mb-4">☀️</span>
+                        <h3 class="text-white text-2xl font-bold mb-2">Summer Vibes</h3>
+                        <p class="text-yellow-100 text-center">Light, breathable, and effortlessly cool</p>
+                    </div>
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition duration-500 flex items-center justify-center">
+                        <div class="opacity-0 group-hover:opacity-100 transition duration-500 text-center px-6">
+                            <p class="text-white text-lg mb-4">Perfect for: Beach, Vacation, Hot Days</p>
+                            <a href="get-styled.html" class="inline-block bg-white text-yellow-600 px-6 py-3 rounded-full font-semibold hover:bg-yellow-100 transition">Get This Look</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative group overflow-hidden rounded-2xl cursor-pointer card-hover">
+                    <div class="bg-gradient-to-br from-rose-500 to-red-500 h-96 flex flex-col items-center justify-center p-8">
+                        <span class="text-white text-7xl mb-4">💝</span>
+                        <h3 class="text-white text-2xl font-bold mb-2">Date Night</h3>
+                        <p class="text-rose-100 text-center">Romantic and sophisticated for special moments</p>
+                    </div>
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition duration-500 flex items-center justify-center">
+                        <div class="opacity-0 group-hover:opacity-100 transition duration-500 text-center px-6">
+                            <p class="text-white text-lg mb-4">Perfect for: Dinner Dates, Romantic Evenings</p>
+                            <a href="get-styled.html" class="inline-block bg-white text-rose-600 px-6 py-3 rounded-full font-semibold hover:bg-rose-100 transition">Get This Look</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative group overflow-hidden rounded-2xl cursor-pointer card-hover">
+                    <div class="bg-gradient-to-br from-violet-500 to-purple-700 h-96 flex flex-col items-center justify-center p-8">
+                        <span class="text-white text-7xl mb-4">💒</span>
+                        <h3 class="text-white text-2xl font-bold mb-2">Wedding Guest</h3>
+                        <p class="text-violet-100 text-center">Elegant ensembles for celebration season</p>
+                    </div>
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition duration-500 flex items-center justify-center">
+                        <div class="opacity-0 group-hover:opacity-100 transition duration-500 text-center px-6">
+                            <p class="text-white text-lg mb-4">Perfect for: Weddings, Ceremonies, Galas</p>
+                            <a href="get-styled.html" class="inline-block bg-white text-violet-600 px-6 py-3 rounded-full font-semibold hover:bg-violet-100 transition">Get This Look</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+                Ready to Find <span class="gradient-text">Your Perfect Look</span>?
+            </h2>
+            <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+                Let our AI stylist create a personalized outfit just for you
+            </p>
+            <a href="get-styled.html" class="inline-block bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl transition duration-300">
+                Get Styled Now
+            </a>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-2xl font-bold gradient-text mb-4">SmartFit Style</h3>
+                    <p class="text-gray-400">AI-powered fashion styling for the modern man</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="index.html" class="hover:text-purple-400 transition duration-300">Home</a></li>
+                        <li><a href="features.html" class="hover:text-purple-400 transition duration-300">Features</a></li>
+                        <li><a href="get-styled.html" class="hover:text-purple-400 transition duration-300">Get Styled</a></li>
+                        <li><a href="lookbook.html" class="hover:text-purple-400 transition duration-300">Lookbook</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">About</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-purple-400 transition duration-300">Our Story</a></li>
+                        <li><a href="#" class="hover:text-purple-400 transition duration-300">Team</a></li>
+                        <li><a href="#" class="hover:text-purple-400 transition duration-300">Careers</a></li>
+                        <li><a href="#" class="hover:text-purple-400 transition duration-300">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-purple-600 transition duration-300">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-purple-600 transition duration-300">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-purple-600 transition duration-300">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <p class="text-gray-400 mt-4">info@smartfitstyle.com</p>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>&copy; 2026 SmartFit Style. All rights reserved. Powered by AI.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
